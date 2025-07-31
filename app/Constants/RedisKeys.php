@@ -6,7 +6,7 @@ class RedisKeys
 {
     private static function prefix(): string
     {
-        return getenv('REDIS_KEY_PREFIX') ?: 'dev';
+        return getenv('REDIS_PREFIX') ?: 'dev';
     }
 
     public static function coaster(string $id): string
@@ -26,7 +26,7 @@ class RedisKeys
 
     public static function wagonIndex(string $coasterId): string
     {
-        return self::prefix() . ":wagon:*:" . $coasterId;
+        return self::prefix() . ":wagon:" . $coasterId.":*";
     }
 
     public static function coasterWagonSet(string $coasterId): string

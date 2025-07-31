@@ -4,6 +4,7 @@ namespace App\Services\Status;
 
 use App\DTO\CoasterStatusDTO;
 use App\DTO\StatusReportDTO;
+use App\Factories\StatusReportDTOFactory;
 use DateTime;
 
 class StatusAnalyzer
@@ -49,17 +50,17 @@ class StatusAnalyzer
         $coaster = $dto->getCoaster();
         $wagons = $dto->getWagons();
 
-        $trackLength = $coaster->getTrackLength(); // in meters
+        $trackLength = $coaster->getTrackLength();
         $clientCapacity = 0;
-        $staff = 1; // 1 required for the coaster itself
+        $staff = 1;
 
         foreach ($wagons as $wagon) {
-            $tripDuration = ($trackLength * 2) / $wagon->getSpeed(); // in seconds
-            $totalTripTime = $tripDuration + 300; // 5-minute cooldown
+            $tripDuration = ($trackLength * 2) / $wagon->getSpeed();
+            $totalTripTime = $tripDuration + 300;
             $tripCount = floor($operatingTime / $totalTripTime);
 
             $clientCapacity += $tripCount * $wagon->getSeatCount();
-            $staff += 2; // 2 per wagon
+            $staff += 2;
         }
 
         return [$clientCapacity, $staff];
@@ -96,7 +97,7 @@ class StatusAnalyzer
     ): StatusReportDTO {
         $coaster = $dto->getCoaster();
 
-        return new StatusReportDTO(
+        return StatusReportDTOFactory::create(
             coasterId: $coaster->getId(),
             startHour: $coaster->getHoursFrom(),
             endHour: $coaster->getHoursTo(),

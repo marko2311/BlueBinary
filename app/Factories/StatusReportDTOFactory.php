@@ -6,7 +6,7 @@ use App\DTO\StatusReportDTO;
 
 class StatusReportDTOFactory
 {
-    public function create(
+    public static function create(
         string $coasterId,
         string $startHour,
         string $endHour,

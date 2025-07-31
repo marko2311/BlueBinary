@@ -1,12 +1,12 @@
 prepare-env:
 	echo "DOCKER_UID=$(shell id -u)" > .env.docker
 	echo "DOCKER_GID=$(shell id -g)" >> .env.docker
-	echo "REDIS_KEY_PREFIX=dev" >> .env.docker
+	echo "REDIS_PREFIX=dev" >> .env.docker
 
 prepare-env-prod:
-	echo "APP_ENV=production" > .env.prod
+	echo "REDIS_PREFIX=prod" > .env.prod
 	echo "CI_ENVIRONMENT=production" >> .env.prod
-	echo "REDIS_KEY_PREFIX=prod" >> .env.prod
+	echo "APP_ENV=production" >> .env.prod
 
 dev-up:
 	test -f public/index.php || ( \
@@ -53,7 +53,7 @@ logs:
 	docker compose logs -f app
 
 monitor:
-	docker compose exec app php spark monitor:status
+	docker compose exec app php spark monitor:run
 
 flush-redis:
 	docker compose exec redis redis-cli FLUSHALL
