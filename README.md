@@ -82,7 +82,7 @@ Usunięcie wagonu
 
 ---
 
-## ⚖️ Zasady działania
+## Zasady działania
 
 ### Personel:
 
@@ -102,7 +102,7 @@ Usunięcie wagonu
 
 ---
 
-## 📊 CLI Monitor
+## CLI Monitor
 
 Asynchroniczny CLI napisany w ReactPHP, śledzi:
 
@@ -147,4 +147,5 @@ make logs              # Podgląd logów kontenera app
 
 ## 💼 Autor: Marcin Sapiela
 
-Przygotowane na potrzeby zadania rekrutacyjnego
+Przygotowane na potrzeby zadania rekrutacyjnego.
+P.S. Dodam tylko od siebie ze nie zrozumialem do konca czy finalnie, do jednej kolejki mozna dodac wiele wagonow czy jeden wagon. Mylaca byla ta informacja 4/6 wagonow. Zinterpretowalem to jak zinterpretowalem i mam nadzieje ze dobrze. 
