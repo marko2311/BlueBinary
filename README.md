@@ -52,11 +52,11 @@ Rejestracja kolejki górskiej
 ```json
 {
   "id": "A1",
-  "liczba_personelu": 16,
-  "liczba_klientow": 60000,
-  "dl_trasy": 1800,
-  "godziny_od": "8:00",
-  "godziny_do": "16:00"
+  "staffCount": 16,
+  "dailyCustomerCount": 60000,
+  "trackLength": 1800,
+  "hoursFrom": "8:00",
+  "hoursTo": "16:00"
 }
 ```
 
@@ -71,8 +71,8 @@ Dodanie wagonu
 ```json
 {
   "id": "W1",
-  "ilosc_miejsc": 32,
-  "predkosc_wagonu": 1.2
+  "seat_count": 32,
+  "speed": 1.2
 }
 ```
 
@@ -145,10 +145,8 @@ make flush-redis-prod  # Czyści Redis (prod)
 make logs              # Podgląd logów kontenera app
 ```
 
-## 💼 Autor: Marcin Sapiela
-
 Przygotowane na potrzeby zadania rekrutacyjnego.
 
 ---
 
-P.S. Dodam tylko od siebie ze nie zrozumialem do konca czy finalnie, do jednej kolejki mozna dodac wiele wagonow czy jeden wagon. Mylaca byla ta informacja 4/6 wagonow. Zinterpretowalem to jak zinterpretowalem i mam nadzieje ze dobrze. I generalnie tylko dodam ze jestem srednie zadowolny z tego zadania, bo troche rzeczy sie nalozylo na raz (w tym planowane wczesniej wakacje) i troche sie z tym pospieszylem. Ale raczej codziennie bede cos zmienial tutaj. Dzieki za fajne wyzwanie! Zawsze cos nowego do nauki!
+P.S. Dodam tylko od siebie ze nie zrozumialem do konca czy finalnie, do jednej kolejki mozna dodac wiele wagonow czy jeden wagon. Mylaca byla ta informacja 4/6 wagonow. Zinterpretowalem to jak zinterpretowalem i mam nadzieje ze dobrze. I generalnie tylko dodam ze jestem srednie zadowolny z tego zadania, bo troche rzeczy sie nalozylo na raz (w tym planowane wczesniej wakacje) i troche sie z tym pospieszylem. Ale raczej codziennie bede cos zmienial tutaj. Zawsze cos nowego do nauki!
