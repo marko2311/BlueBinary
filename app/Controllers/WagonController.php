@@ -51,15 +51,15 @@ class WagonController extends ResourceController
         }
     }
 
-    public function delete($coasterId = null, $wagonId = null): ResponseInterface
+    public function delete($id = null, $wagonId = null): ResponseInterface
     {
-        if ($coasterId === null || $wagonId === null) {
+        if ($id === null || $wagonId === null) {
             return $this->failValidationErrors('Missing coaster or wagon ID');
         }
 
         try {
-            $this->service->deleteWagon($coasterId, $wagonId);
-            return $this->respondDeleted(['message' => "Wagon $wagonId deleted from coaster $coasterId"]);
+            $this->service->deleteWagon($id, $wagonId);
+            return $this->respondDeleted(['message' => "Wagon $wagonId deleted from coaster $id"]);
         } catch (RuntimeException $e) {
             return $this->failNotFound($e->getMessage());
         } catch (\Throwable $e) {

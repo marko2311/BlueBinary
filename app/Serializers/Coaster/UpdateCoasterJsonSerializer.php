@@ -17,7 +17,6 @@ class UpdateCoasterJsonSerializer implements CoasterSerializerInterface
             CoasterFields::ID => $dto->getId(),
             CoasterFields::STAFF_COUNT => $dto->getStaffCount(),
             CoasterFields::DAILY_CUSTOMER_COUNT => $dto->getDailyCustomerCount(),
-            CoasterFields::TRACK_LENGTH => $dto->getTrackLength(),
             CoasterFields::HOURS_FROM => $dto->getHoursFrom(),
             CoasterFields::HOURS_TO => $dto->getHoursTo(),
         ]);
