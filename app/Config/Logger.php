@@ -148,4 +148,15 @@ class Logger extends BaseConfig
         //     'messageType' => 0,
         // ],
     ];
+
+    public function __construct()
+    {
+        parent::__construct();
+
+        if (env('CI_ENVIRONMENT') === 'production') {
+            $this->threshold = ['error', 'warning'];
+        } else {
+            $this->threshold = 4;
+        }
+    }
 }
