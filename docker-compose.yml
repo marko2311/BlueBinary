@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    container_name: coaster_app
+    working_dir: /var/www/html
+    volumes:
+      - .:/var/www/html
+    env_file:
+      - .env.docker
+    environment:
+      - APP_ENV=development
+      - CI_ENVIRONMENT=development
+      - APP_USER_UID=${DOCKER_UID}
+      - APP_USER_GID=${DOCKER_GID}
+    depends_on:
+      - redis
+    networks:
+      - coaster_net
+
+  web:
+    image: nginx:stable
+    container_name: coaster_nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - app
+    networks:
+      - coaster_net
+
+  redis:
+    image: redis:alpine
+    container_name: coaster_redis
+    ports:
+      - "6379:6379"
+    networks:
+      - coaster_net
+
+networks:
+  coaster_net:
+    driver: bridge

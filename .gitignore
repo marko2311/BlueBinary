@@ -1,0 +1,60 @@
+# Binaries and OS crap
+*.DS_Store
+*.swp
+*.bak
+*.log
+
+# CI4 specific
+writable/*
+!writable/index.html
+public/build/
+.env
+.env.*
+
+# Composer
+/vendor/
+/composer.lock
+/composer.phar
+
+# PHPUnit
+phpunit.xml
+phpunit.xml.dist
+/tests/_output/
+/tests/_support/_generated/
+
+# Spark
+spark
+
+# Docker & makefile artifacts
+.docker/
+.env.docker
+.env.prod
+.env.local
+docker-compose.override.yml
+
+# IDEs
+.idea/
+.vscode/
+
+# Redis dump (if used)
+dump.rdb
+*.rdb
+
+# Cache and coverage
+cache/
+coverage/
+
+# Backups or temp
+*.sql
+*.zip
+*.tar.gz
+*.tgz
+
+# Node (if you add frontend)
+node_modules/
+npm-debug.log
+yarn.lock
+pnpm-lock.yaml
+
+# CI builds (if generated)
+builds/
