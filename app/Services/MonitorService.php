@@ -5,7 +5,7 @@ namespace App\Services;
 use React\EventLoop\LoopInterface;
 use App\Services\Status\CoasterStatusProvider;
 use App\Services\Status\StatusAnalyzer;
-use App\Services\DTO\StatusReportDTO;
+use App\DTO\StatusReportDTO;
 use App\Services\Renderer\StatisticsRenderer;
 use App\Services\Logger\ProblemLogger;
 

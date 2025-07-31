@@ -2,8 +2,6 @@
 
 namespace App\Commands;
 
-use App\Factories\CoasterStatusDTOFactory;
-use App\Factories\StatusReportDTOFactory;
 use CodeIgniter\CLI\BaseCommand;
 use CodeIgniter\CLI\CLI;
 use React\EventLoop\Factory as LoopFactory;
@@ -33,17 +31,12 @@ class Monitor extends BaseCommand
         $redisFactory = new RedisFactory($loop);
         $redis = $redisFactory->createLazyClient('redis://redis:6379');
 
-        // Sync dependencies
         $redisSync = new RedisClientService();
         $coasterRepo = new CoasterRepository(new CoasterSerializerResolver(), $redisSync);
         $wagonRepo = new WagonRepository(new RegisterWagonJsonSerializer(), $redisSync);
 
-        // Factories and services
-        $coasterStatusFactory = new CoasterStatusDTOFactory();
-        $statusReportFactory = new StatusReportDTOFactory();
-
-        $statusProvider = new CoasterStatusProvider($coasterRepo, $wagonRepo, $coasterStatusFactory);
-        $statusAnalyzer = new StatusAnalyzer($statusReportFactory);
+        $statusProvider = new CoasterStatusProvider($coasterRepo, $wagonRepo);
+        $statusAnalyzer = new StatusAnalyzer();
         $renderer = new StatisticsRenderer();
         $logger = new ProblemLogger(WRITEPATH . 'logs/monitor.log');
 

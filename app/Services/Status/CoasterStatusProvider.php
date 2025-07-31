@@ -22,7 +22,7 @@ class CoasterStatusProvider
      */
     public function getAll(): PromiseInterface
     {
-        $coasters = $this->coasterRepository->findAll(); // synchroniczne
+        $coasters = $this->coasterRepository->findAll();
 
         $promises = array_map(function ($coaster) {
             return resolve(
