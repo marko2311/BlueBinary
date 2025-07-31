@@ -151,4 +151,4 @@ Przygotowane na potrzeby zadania rekrutacyjnego.
 
 ---
 
-P.S. Dodam tylko od siebie ze nie zrozumialem do konca czy finalnie, do jednej kolejki mozna dodac wiele wagonow czy jeden wagon. Mylaca byla ta informacja 4/6 wagonow. Zinterpretowalem to jak zinterpretowalem i mam nadzieje ze dobrze. 
+P.S. Dodam tylko od siebie ze nie zrozumialem do konca czy finalnie, do jednej kolejki mozna dodac wiele wagonow czy jeden wagon. Mylaca byla ta informacja 4/6 wagonow. Zinterpretowalem to jak zinterpretowalem i mam nadzieje ze dobrze. I generalnie tylko dodam ze jestem srednie zadowolny z tego zadania, bo troche rzeczy sie nalozylo na raz (w tym planowane wczesniej wakacje) i troche sie z tym pospieszylem. Ale raczej codziennie bede cos zmienial tutaj.
