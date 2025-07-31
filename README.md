@@ -120,7 +120,7 @@ Przykład:
 2. Wagons: 6
 3. Staff: 8/10
 4. Clients (planned / possible): 150 / 100
-5. Problem: Missing 2 staff, Missing 2 wagons
+5. Problem: Missing 2 staff
 ```
 
 ---
